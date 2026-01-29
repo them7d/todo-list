@@ -3,27 +3,29 @@
             this class for connect to data base
             @return PDO Object connection
       */ 
-      
-      require_once 'config/config.php';
+
+      namespace App\Core;
+      use PDO;
+      require_once __DIR__ . '/../../config/config.php';
+
       class Database{
 
-            private $host = DB_HOST;
+            private $dns = DB_DNS;
             private $user = DB_USER;
             private $password = DB_PASSWORD;
-            private $name = DB_NAME;
 
-            public $conn
+            public $conn;
 
             public function connect(){
                   $this->conn = null;
                   try{
 
-                        $this->conn = new PDO($host, $user, $password, $name);
+                        $this->conn = new PDO($this->dns, $this->user, $this->password);
 
                   }catch(PDOExpection $e){
                         echo $e->getMessage();
                   }
-                  return $this->conn
+                  return $this->conn;
             }
       }
 ?>

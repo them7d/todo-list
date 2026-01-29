@@ -24,45 +24,35 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `child`
+-- Table structure for table `tasks`
 --
 
-CREATE TABLE `child` (
-  `parentid` int(11) NOT NULL,
-  `id` int(11) NOT NULL,
-  `sub` text NOT NULL,
-  `describ` text NOT NULL,
-  `case` int(11) NOT NULL
+CREATE TABLE `tasks` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `sub` TEXT NOT NULL,
+  `case` TINYINT(1) NOT NULL,
+  `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`) 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
---
--- Table structure for table `todolist`
---
-
-CREATE TABLE `todolist` (
-  `id` int(11) NOT NULL,
-  `sub` text NOT NULL,
-  `case` int(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Indexes for dumped tables
+-- Table structure for table `users`
 --
 
---
--- Indexes for table `child`
---
-ALTER TABLE `child`
-  ADD PRIMARY KEY (`id`);
+CREATE TABLE users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  username VARCHAR(50) NOT NULL,
+  email VARCHAR(100) ,
+  password VARCHAR(255) NOT NULL,
+  iv VARBINARY(16) NOT NULL,
+  token VARCHAR(255) DEFAULT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
 
---
--- Indexes for table `todolist`
---
-ALTER TABLE `todolist`
-  ADD PRIMARY KEY (`id`);
-COMMIT;
+-- --------------------------------------------------------
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
