@@ -4,6 +4,10 @@
 
 This is a web-based To-Do List application built with **PHP**, **MySQL**, and **Composer**. It follows an MVC architecture and uses modern dependency management.
 
+## Screenshot
+
+![](assets\images\Screenshot.jpg)
+
 ## Prerequisites
 
 To run this project, you need:
