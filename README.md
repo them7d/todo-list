@@ -6,7 +6,7 @@ This is a web-based To-Do List application built with **PHP**, **MySQL**, and **
 
 ## Screenshot
 
-![](assets\images\Screenshot.jpg)
+![setup screenshot](assets/images/Screenshot.jpg)
 
 ## Prerequisites
 
